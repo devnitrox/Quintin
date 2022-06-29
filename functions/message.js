@@ -1,13 +1,3 @@
-async function messageEveryone(message, content) {
-    message.guild.members.fetch().then(members => {
-        members.forEach(member => {
-            if (member.user.bot) return;
-            member.send(content)
-        });
-    })
-}
-
-
 async function messageUser(user, content, client, MessageEmbed, config) {
     client.users.fetch(user).then(member => {
         try {
